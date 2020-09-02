@@ -12,6 +12,13 @@ Param(
   [String]$Label = "Token"
 )
 
+###########################################################################################
+# Workaround used to allow non-trusted SSL certificate, similar to "curl -k"
+# This is a workaround for demo purposes only, proper certificates should be used instead
+class TrustAllCertsPolicy : System.Net.ICertificatePolicy { [bool] CheckValidationResult([System.Net.ServicePoint] $a,[System.Security.Cryptography.X509Certificates.X509Certificate] $b,[System.Net.WebRequest] $c,[int] $d) { return $true } }
+[System.Net.ServicePointManager]::CertificatePolicy = New-Object TrustAllCertsPolicy
+###########################################################################################
+
 $Uri = "https://" + $Server + ":" + $Port + $APIEndpoint
 
 ## Helper function to work with secure input string
@@ -47,5 +54,3 @@ if ($Response) {
     Set-Content -Path ".\\token" -Value $Token
     Set-Content -Path ".\\server" -Value $Server
 }
-
-
