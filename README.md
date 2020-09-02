@@ -3,15 +3,15 @@
 This repo is just a bunch of files used as examples and playing around with the various Puppet API Endpoints.
 
 Some helpful links to Puppet API docs:
-_. <https://puppet.com/docs/puppetdb/latest/api/query/v4/nodes.html>
-_. <https://puppet.com/docs/puppetdb/latest/api/query/v4/inventory.html>
-_. <https://puppet.com/docs/puppetdb/latest/api/query/v4/reports.html>
-_. <https://puppet.com/docs/puppetdb/latest/api/query/v4/resources.html>
+* <https://puppet.com/docs/puppetdb/latest/api/query/v4/nodes.html>
+* <https://puppet.com/docs/puppetdb/latest/api/query/v4/inventory.html>
+* <https://puppet.com/docs/puppetdb/latest/api/query/v4/reports.html>
+* <https://puppet.com/docs/puppetdb/latest/api/query/v4/resources.html>
 
-_Note:_ For getting Factor fact info for an enpoint, you probably want the Inventory or Nodes endpoints, not the Facts endpoint. See the examples below.
+**Note:** For getting Factor fact info for an enpoint, you probably want the Inventory or Nodes endpoints, not the Facts endpoint. See the examples below.
 
-_. <https://puppet.com/docs/pe/2019.8/orchestrator_api_commands_endpoint.html> Orchestraor Endpoint for running Puppet Agent, Tasks & Plans
-_. <https://puppet.com/docs/pe/2019.1/rbac_api_v1_token.html> RBAC Token Enpoint
+* <https://puppet.com/docs/pe/2019.8/orchestrator_api_commands_endpoint.html> Orchestraor Endpoint for running Puppet Agent, Tasks & Plans
+* <https://puppet.com/docs/pe/2019.1/rbac_api_v1_token.html> RBAC Token Enpoint
 
 ## Powershell Based Examples
 
@@ -58,7 +58,7 @@ Sample Output:
 #### -Fact and -Value
 
 Using the -Fact and -Value options will pull a list of nodes that match the provided Fact and Value
-_Note:_ -Fact and -Value are meant to be used together, if you want to just pull a list of nodes with specific facts, use the `-Query` option with the example below.
+**Note:** -Fact and -Value are meant to be used together, if you want to just pull a list of nodes with specific facts, use the `-Query` option with the example below.
 
 Sample Command: `.\api_query.ps1 -Fact "facts.architecture" -Value "x86_64"`
 Sample Output:
